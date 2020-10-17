@@ -36,15 +36,13 @@
             color: #a9a9a9;
         }
     </style>
-    <script>
-        /* TODO this is for you to complete */
-    </script>
+    
 </head>
 <body>
 
 <article>
     <h2>What is lorem ipsum?</h2>
-    <div id="p1_show" class="showlink"><a href="#">Show</a></div>
+    <div id="p1_show" class="showlink"><a id="show1" href="#" onclick="showp1()">Show</a></div>
     <div id="p1_text" class="text">
         <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the
             industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
@@ -52,13 +50,13 @@
             electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of
             Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like
             Aldus PageMaker including versions of Lorem Ipsum.</p>
-        <p><a href="#">Hide</a></p>
+        <p><a id="hide1" onclick="hidep1()" href="#">Hide</a></p>
     </div>
 </article>
 
 <article>
     <h2>Why do we use it?</h2>
-    <div id="p2_show" class="showlink"><a href="#">Show</a></div>
+    <div id="p2_show" class="showlink"><a id="show2" onclick="showp2()" href="#">Show</a></div>
     <div id="p2_text" class="text">
         <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking
             at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters,
@@ -66,13 +64,13 @@
             publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for
             'lorem ipsum' will uncover many web sites still in their infancy. Various versions have evolved over the
             years, sometimes by accident, sometimes on purpose (injected humour and the like).</p>
-        <p><a href="#">Hide</a></p>
+        <p><a  id="hide2" onclick="hidep2()" href="#">Hide</a></p>
     </div>
 </article>
 
 <article>
     <h2>Where does it come from?</h2>
-    <div id="p3_show" class="showlink"><a href="#">Show</a></div>
+    <div id="p3_show" class="showlink"><a id="show3" onclick="showp3()" href="#">Show</a></div>
     <div id="p3_text" class="text">
         <p>Contrary to popular belief, Lorem Ipsum is not simply random text. It has roots in a piece of classical Latin
             literature from 45 BC, making it over 2000 years old. Richard McClintock, a Latin professor at
@@ -85,9 +83,57 @@
         <p>The standard chunk of Lorem Ipsum used since the 1500s is reproduced below for those interested. Sections
             1.10.32 and 1.10.33 from "de Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact
             original form, accompanied by English versions from the 1914 translation by H. Rackham.</p>
-        <p><a href="#">Hide</a></p>
+        <p><a id="hide3"  onclick="hidep3()" href="#">Hide</a></p>
     </div>
 </article>
+
+
+<script>
+    
+    function hidep1() {
+        document.getElementById("p1_text").style.display = "none" ;
+        document.getElementById("hide1").style.display = "none" ;
+        document.getElementById("show1").style.display = "block" ;
+    
+    }
+    
+    function showp1() {
+    
+        document.getElementById("p1_text").style.display = "block" ;
+        document.getElementById("show1").style.display = "none" ;
+        document.getElementById("hide1").style.display = "block" ;
+    }
+    
+    function hidep2() {
+        document.getElementById("p2_text").style.display = "none" ;
+        document.getElementById("hide2").style.display = "none" ;
+        document.getElementById("show2").style.display = "block" ;
+    
+    }
+    
+    function showp2() {
+    
+        document.getElementById("p2_text").style.display = "block" ;
+        document.getElementById("show2").style.display = "none" ;
+        document.getElementById("hide2").style.display = "block" ;
+    }
+    
+    function hidep3() {
+        document.getElementById("p3_text").style.display = "none" ;
+        document.getElementById("hide3").style.display = "none" ;
+        document.getElementById("show3").style.display = "block" ;
+    
+    }
+    
+    function showp3() {
+    
+        document.getElementById("p3_text").style.display = "block" ;
+        document.getElementById("show3").style.display = "none" ;
+        document.getElementById("hide3").style.display = "block" ;
+    }
+    
+</script>
+
 
 </body>
 </html>

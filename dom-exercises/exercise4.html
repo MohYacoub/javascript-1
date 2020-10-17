@@ -18,38 +18,51 @@
 </head>
 
 <body>
-    <form name="form">
-        <select name="font_family" id="font_family" onchange="changeFont (this);">
-            <option value="Arial">Arial</option>
-            <option value="Verdana">Verdana</option>
-            <option value="Helvetica">Helvetica</option>
-            <option value="Times New Roman">Times New Roman</option>
-            <option value="Courier New">Courier New</option>
-        </select>
-        <select name="font_size" id="font_size" onclick="changeSize(this);">
-            <option value="8pt">8pt</option>
-            <option value="10pt">10pt</option>
-            <option value="12pt"></option>12pt</option>
-            <option value="14pt">14pt</option>
-            <option value="16pt">16pt</option>
-        </select>
-        <label>Italic <input type="checkbox" name="font_italic" id="font_italic"
-                onclick="document.execCommand('italic',false,null);" title="Italicize Highlighted Text"></label>
-        <label>Bold <input type="checkbox" name="font_bold" id="font_bold"
-                onclick="document.execCommand( 'bold',false,null);" title="Bold Highlighted Text"></label>
-        <label>Underline <input type="checkbox" name="font_underline" id="font_underline"
-                onclick="document.execCommand( 'underline',false,null);"></label>
-    </form>
 
-    <div id="editor1" contenteditable="true" data-text="Enter comment...."></div>
+    <body>
+        <form name="form">
+            <select onchange="familyChange()" name="font_family" id="font_family">
+                <option value="Arial" selected>Arial</option>
+                <option value="Verdana">Verdana</option>
+                <option value="Helvetica">Helvetica</option>
+                <option value="Times New Roman">Times New Roman</option>
+                <option value="Courier New">Courier New</option>
+            </select>
+            <select onchange="sizeChange()" name="font_size" id="font_size">
+                <option value="8pt">8pt</option>
+                <option value="10pt">10pt</option>
+                <option value="12pt" selected>12pt</option>
+                <option value="14pt">14pt</option>
+                <option value="16pt">16pt</option>
+            </select>
+            <label>Italic <input onclick="italic()" type="checkbox" name="font_italic" id="font_italic"></label>
+            <label>Bold <input onclick="bold()" type="checkbox" name="font_bold" id="font_bold"></label>
+            <label>Underline <input onclick="underline()" type="checkbox" name="font_underline"
+                    id="font_underline"></label>
+        </form>
+
+        <div id="text">The quick brown fox jumps over the lazy dog</div>
+    </body>
     <script>
-        function changeFont() {
-            var myFont = document.getElementById("font_family").value;
-            document.execCommand('fontName', false, myFont);
+        let text1 = document.getElementById('text');
+        function familyChange() {
+            text1.style.fontFamily = document.getElementById('font_family').value;
         }
-        function changeSize() {
-            var mysize = document.getElementById("font_size").value;
-            document.execCommand('fontSize', false, mysize);
+
+        function sizeChange() {
+            text1.style.fontSize = document.getElementById('font_size').value;
+        }
+
+        function italic() {
+            text1.style.fontStyle = 'italic';
+        }
+
+        function bold() {
+            text1.style.fontWeight = 'bold';
+        }
+
+        function underline() {
+            text1.style.textDecoration = 'underline';
         }
 
     </script>
