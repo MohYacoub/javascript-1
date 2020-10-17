@@ -57,14 +57,15 @@
 
                     
         changeColor = document.getElementById('mydiv');
-        colors = ['red' , 'green', 'blue'];
-         colorIndex = 0;
+        colors = ['red' , 'green', 'blue' , 'orange' ,'yellow'];
+        colorIndex = 0;
 
-        
+         
+         
         function M() 
         {
-            changeColor.style.backgroundColor = colors[colorIndex];
-            colorIndex = (colorIndex + 1) % colors.length; 
+            document.getElementById('mydiv').style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+            colorIndex = (colorIndex + 1) % colors.length;
         };
 
            changeColor.addEventListener('click',M) 

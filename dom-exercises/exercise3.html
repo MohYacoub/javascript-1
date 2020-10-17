@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+<script>
+
+
+
+    function select(){
+   
+       var imagechange = document.getElementById("images").value;
+       document.getElementById("image").src=imagechange;
+   
+   
+    }
+   
+   </script>
+</head>
+
+<body>
+
+    <!--    <select id="mySelect" onchange="changimg()">
+        <option value="select">select</option>
+        <option value="germany">germany</option>
+        <option value="palastain">palastine</option>
+        <option value="jordan">jordan</option>
+    </select>
+
+    <select name="kitchen_color" id="kitchen_color" onchange="setImage(this);">
+        <option value="images/ger.png">Google</option>
+        <option value="images/jor.jpg">Yandex</option>
+        <option value="images/ger.png">Mail</option>
+    </select><br />
+    <img src="" name="image-swap" />
+
+
+
+    <div id="demo"></div>
+
+    <script>
+/*  -->
+    <!-- 
+        function changimg() {
+
+            var x = document.getElementById("mySelect").value;
+
+            if (x == 'select') {
+                document.getElementById("demo").innerHTML = "<img id="demo" src="images / jor.jpg" alt="jjj">";
+            }
+        }
+
+        function setImage(select) {
+            var image = document.getElementsByName("image-swap")[0];
+            image.src = select.options[select.selectedIndex].value;
+        }
+
+ */ --><!-- 
+
+    <form>
+        <select id="selectList" name="mySelect" onchange="imgChange (this);">
+            <option value="images/noimg.PNG">select</option>
+            <option value="images/jor.jpg">jordan</option>
+            <option value="images/ger.png">germany</option>
+
+        </select>
+    </form>
+
+    <img src="images/noimg.PNG" name="image-swap" />
+
+    <script>
+
+        function imgChange(select) {
+            var image = document.getElementsByName("image-swap")[0];
+            image.src = select.options[select.selectedIndex].value;
+        }
+
+    </script>
+ -->
+
+
+ <select id="images" onchange="select(this)">
+    <option  value="images/noimg.PNG">Select</option>
+    <option  value="images/jor.jpg">jordan</option>
+    <option  value="images/ger.png">Germany</option>
+</select>
+
+<br>
+<br>
+<br>
+
+
+
+<img  id="image" src="images/noimg.PNG">
+
+</body>
+
+</html>
